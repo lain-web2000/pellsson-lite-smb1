@@ -727,7 +727,7 @@ toggle_second_quest:
 toggle_rng_offset:
 		ldy CategorySelect
 		iny
-		cpy #$03
+		cpy #$02
 		bcc @InRange
 		ldy #$00
 @InRange:
