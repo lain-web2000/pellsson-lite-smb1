@@ -1,0 +1,17 @@
+smb.bin
+fceux
+*.deb
+*.nes
+chr/org.chr
+chr/lost.chr
+chr/intro.chr
+build
+inc/wram.inc
+wram/full.bin
+lost/wram-init.bin
+test.*
+smb.dbg
+chr/*.chr
+smb.tmp
+.DS_Store
+*.dep
