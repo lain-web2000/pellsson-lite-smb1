@@ -685,12 +685,23 @@ WriteRulePointer:
 		asl ; *=4
 		clc
 		adc $04
+		ldx PowerUps
+		cpx #$02
+		bcc @is_fire
 @is_org:
 		clc
 		adc #<WRAM_OrgRules
 		sta $04
 		lda #0
 		adc #>WRAM_OrgRules
+		sta $05
+		rts
+@is_fire:
+		clc
+		adc #<WRAM_FireRules
+		sta $04
+		lda #0
+		adc #>WRAM_FireRules
 		sta $05
 		rts
 
@@ -836,7 +847,7 @@ begin_save:
 		sta WRAM_PracticeFlags
 		inc DisableScreenFlag
 		lda WRAM_DelaySaveFrames
-		sta WRAM_SaveFramesLeft
+		sta SaveFramesLeft
 		lda #0
 		sta SND_MASTERCTRL_REG
 		rts
@@ -853,7 +864,7 @@ begin_load:
 		sta WRAM_PracticeFlags
 		inc DisableScreenFlag
 		lda WRAM_DelaySaveFrames
-		sta WRAM_SaveFramesLeft
+		sta SaveFramesLeft
 		lda #$00
 		sta SND_MASTERCTRL_REG
 @invalid_save:
@@ -1003,7 +1014,7 @@ ForceUpdateSockHash:
 		jmp ReturnBank
 
 LoadState:
-		dec WRAM_SaveFramesLeft
+		dec SaveFramesLeft
 		beq @do_loadstate
 		lda GamePauseStatus
 		ora #02
@@ -1118,7 +1129,7 @@ LoadState:
 		rts
 
 SaveState:
-		dec WRAM_SaveFramesLeft
+		dec SaveFramesLeft
 		beq @do_savestate
 		lda GamePauseStatus
 		ora #02
@@ -1241,7 +1252,7 @@ SaveState:
 .endmacro
 
 noredraw_dec:
-		dec WRAM_UserFramesLeft
+		dec UserFramesLeft
 noredraw:
 		jmp UpdateStatusInput
 hide:
@@ -1250,7 +1261,7 @@ hide:
 		jmp terminate
 		
 RedrawUserVars:
-		lda WRAM_UserFramesLeft
+		lda UserFramesLeft
 		bne noredraw_dec
 		ldy VRAM_Buffer1_Offset
 		bne noredraw
@@ -1270,7 +1281,7 @@ RedrawUserVars:
 terminate:
 		sty VRAM_Buffer1+$0A
 		lda WRAM_DelayUserFrames
-		sta WRAM_UserFramesLeft
+		sta UserFramesLeft
 		
 UpdateStatusInput:
     lda WRAM_PracticeFlags

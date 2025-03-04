@@ -1,5 +1,8 @@
 BANK_SELECTED = $07ff
 
+SaveFramesLeft = $013a
+UserFramesLeft = $013b
+
 .define PF_SockMode $01 ; Todo move elsewhere...
 .define PF_SaveState $02
 .define PF_LoadState $04

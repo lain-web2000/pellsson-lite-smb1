@@ -101,7 +101,7 @@ WRAM_OrgRules:
 	.dword 0, 0, 0, 0 ; World 8
 	.dword 0, 0, 0, 0 ; World 9 (Minus World)
 
-WRAM_LostRules:
+WRAM_FireRules:
 	.dword 0, 0, 0, 0 ; World 1
 	.dword 0, 0, 0, 0 ; World 2
 	.dword 0, 0, 0, 0 ; World 3
@@ -110,56 +110,7 @@ WRAM_LostRules:
 	.dword 0, 0, 0, 0 ; World 6
 	.dword 0, 0, 0, 0 ; World 7
 	.dword 0, 0, 0, 0 ; World 8
-	.dword 0, 0, 0, 0 ; World 9
-	.dword 0, 0, 0, 0 ; World A
-	.dword 0, 0, 0, 0 ; World B
-	.dword 0, 0, 0, 0 ; World C
-	.dword 0, 0, 0, 0 ; World D
-	
-WRAM_LostRules_L:
-	.dword 0, 0, 0, 0 ; World 1
-	.dword 0, 0, 0, 0 ; World 2
-	.dword 0, 0, 0, 0 ; World 3
-	.dword 0, 0, 0, 0 ; World 4
-	.dword 0, 0, 0, 0 ; World 5
-	.dword 0, 0, 0, 0 ; World 6
-	.dword 0, 0, 0, 0 ; World 7
-	.dword 0, 0, 0, 0 ; World 8
-	.dword 0, 0, 0, 0 ; World 9
-	.dword 0, 0, 0, 0 ; World A
-	.dword 0, 0, 0, 0 ; World B
-	.dword 0, 0, 0, 0 ; World C
-	.dword 0, 0, 0, 0 ; World D
-	
-WRAM_NipponRules:
-	.dword 0, 0, 0, 0 ; World 1
-	.dword 0, 0, 0, 0 ; World 2
-	.dword 0, 0, 0, 0 ; World 3
-	.dword 0, 0, 0, 0 ; World 4
-	.dword 0, 0, 0, 0 ; World 5
-	.dword 0, 0, 0, 0 ; World 6
-	.dword 0, 0, 0, 0 ; World 7
-	.dword 0, 0, 0, 0 ; World 8
-	.dword 0, 0, 0, 0 ; World 9
-	.dword 0, 0, 0, 0 ; World A
-	.dword 0, 0, 0, 0 ; World B
-	.dword 0, 0, 0, 0 ; World C
-	.dword 0, 0, 0, 0 ; World D
-
-WRAM_NipponRules_L:
-	.dword 0, 0, 0, 0 ; World 1
-	.dword 0, 0, 0, 0 ; World 2
-	.dword 0, 0, 0, 0 ; World 3
-	.dword 0, 0, 0, 0 ; World 4
-	.dword 0, 0, 0, 0 ; World 5
-	.dword 0, 0, 0, 0 ; World 6
-	.dword 0, 0, 0, 0 ; World 7
-	.dword 0, 0, 0, 0 ; World 8
-	.dword 0, 0, 0, 0 ; World 9
-	.dword 0, 0, 0, 0 ; World A
-	.dword 0, 0, 0, 0 ; World B
-	.dword 0, 0, 0, 0 ; World C
-	.dword 0, 0, 0, 0 ; World D
+	.dword 0, 0, 0, 0 ; World 9 (Minus World)
 	
 WRAM_Timer:
 	.word 0
